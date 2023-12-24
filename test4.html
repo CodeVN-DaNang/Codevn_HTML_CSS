@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="https://code.jquery.com/jquery-3.6.3.min.js"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body style="background-color:  lightgreen;">
+    <div>
+        <button type="button" class="btn btn-primary"
+            onclick="window.location.href = 'https://www.facebook.com/truong.nhat.33886'">Hello</button>
+        <button id="btn1" style="position: absolute;" type="button" class="btn btn-warning"
+            onmouseover="changePosition()">Do may bam duoc tao</button>
+
+    </div>
+    <div>
+        <textarea id="fake" onkeyup="fakeTyping()" placeholder="Enter anything"></textarea>
+    </div>
+    <div>
+        <button id="color" type="button" class="btn btn-primary" onclick="changeColorBackground()">click de doi mau</button>
+    </div>
+</body>
+<script>
+    function changePosition() {
+        document.getElementById("btn1").style.left = Math.floor(Math.random() * 1000) + "px";
+        document.getElementById("btn1").style.top = Math.floor(Math.random() * 600) + "px";
+    }
+    var index = 0;
+
+    function fakeTyping() {
+        var array = ["V", "I", "N", "H", " ", "G", "A", "!", "!", "!"];
+        document.getElementById("fake").value = "";
+        if (index == array.length) {
+            document.getElementById("fake").value = "";
+            index = 0;
+        } else {
+            for (let i = 0; i < index; i++) {
+                document.getElementById("fake").value += array[i];
+            }
+            index++;
+        }
+
+    }
+
+    function changeColorBackground(params) {
+        var array = ["#73c6d9", "#2a95bf", "#d5e7f2", "#126da6", "#1261a6"];
+        if (index == array.length) {
+            index = 0;
+        } else {
+            document.getElementsByTagName("body").style.color = array[index];
+            index++;
+        }
+        
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style ="background-color: lightblue;">
+    <div style="width: 100%;">
+        <div style="text-align:center;">
+            <h1>CALCULATOR</h1>
+        </div>
+        <div>
+            <div style="width: 100%;  text-align: center;">
+                <input style="width: 80%;height:60px; font-size: xx-large;" type="text" value ="" id="calculator">
+            </div>
+            <div style="margin: 4.4% 0 9.8% 9.8%;">
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn0" value="0" onclick="btn(0)">0</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn1" value="1" onclick="btn(1)">1</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn2" value="2"  onclick="btn(2)">2</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn3" value="3"  onclick="btn(3)">3</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn4" value="4" onclick="btn(4)">4</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn5" value="5"  onclick="btn(5)">5</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn6" value="6"  onclick="btn(6)">6</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn7" value="7" onclick="btn(7)">7</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn8" value="8" onclick="btn(8)">8</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn9" value="9" onclick="btn(9)">9</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn=" value="=" onclick="calculate()">=</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn+" value="+" onclick="btn('+')">+</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn-" value="-" onclick="btn('-')">-</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btnx" value="*" onclick="btn('*')">x</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btn/" value="/" onclick="btn('/')">/</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btnC" value="C" onclick="clear()">C</button>
+                <button style="width: 50px; height: 50px;font-size:xx-large" id="btnAC" value="AC" onclick="clearAll()">AC</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var result="";
+    let previousResult = "";
+    function display() {
+        document.getElementById("calculator").value = result;
+    }
+
+    function btn(btnValue) {
+        result += btnValue;
+        display();
+    }
+
+    function clear(){
+        result = result.substring(0, result.length - 1);
+        display();
+    }
+
+    function clearAll() {
+        result = "";
+        display();
+    }
+
+    function calculate(){
+        result = eval(result);
+        display();
+    }
+</script>
+
+</html>
