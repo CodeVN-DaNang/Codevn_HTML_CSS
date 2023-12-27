@@ -1,0 +1,39 @@
+.title{
+    text-align: center;
+}
+.menu{
+    display: flex;
+    padding-left: 25%;
+}
+.menu--item{
+    margin-left: 2%;
+}
+.menu--item:hover{
+    color: blue;
+}
+.content{
+    width: 100%;
+    display: flex;
+}
+.content--row{
+    width: 100%;
+}
+.content--item{
+    margin-left: 3%;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    height: 200px;
+    font-size: xx-large;
+}
+.content--item:hover{
+    background-color: aqua;
+}
+.content--item p {
+    padding-top: 20%;
+}
+
+.content--item a {
+    padding-top: 20%;
+    text-decoration: none;
+}
