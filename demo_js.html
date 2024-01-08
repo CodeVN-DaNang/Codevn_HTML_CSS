@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Dong y lam nguoi yeu anh khong?
+    </h1>
+    <button onclick="yes()" id="bla" style="position: absolute;">
+        yes
+    </button>
+    <button onmouseover="changeColor()" id="hello" style="margin-left: 60px;">no</button>
+    <textarea onkeydown="typeTextarea()" value="fake" id="fake"></textarea>
+</body>
+<script>
+    var a = ["a", " ", "d", "u", "n", "g", " ", "d", "a", "y", " ", "t", "u", " ", "c", "h", "i", "e", "u"];
+
+    var n = "";
+    function typeTextarea() {
+        t = document.fake.txt.value;
+        j = t.length;
+        if (j > 0) {
+            for (var i = 1; i <= j; i++) {
+                n = n + a[i];
+                if (i == 24) {
+                    document.f.txt.value = "";
+                    n = "";
+                }
+            }
+        }
+        document.f.txt.value = n;
+        n = "";
+        setTimeout("typeTextarea()", 1);
+        //return false;
+    }
+    function yes() {
+        alert("hello em anh dung day tu chieu")
+    }
+    function changeColor() {
+        // alert("Hello Thanh")
+        // var hello = prompt("hello")
+        // console.log(hello)
+        // rgb(250,250,0)
+        var red = Math.floor(Math.random() * 251);
+        var green = Math.floor(Math.random() * 251);
+        var blue = Math.floor(Math.random() * 251);
+        var x = Math.floor(Math.random() * 1000);
+        var y = Math.floor(Math.random() * 500);
+
+        // document.getElementById("hello").style.background = "rgb(" + red + "," + green + "," + blue + ")";
+        document.getElementById("hello").style.marginTop = y + "px";
+        document.getElementById("hello").style.marginLeft = x + "px";
+
+    }
+</script>
+
+</html>
